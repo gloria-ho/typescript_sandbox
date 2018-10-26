@@ -7,7 +7,7 @@ const myMonsters = {
     'Nosforatu': new Vampire_1.default('Nosforatu'),
 };
 app.get('/', function (req, res) {
-    res.send('Hello');
+    res.send('Hello, this is a test that the server is running.');
 });
 app.get('/roll-call', function (req, res) {
     const rollCall = [];
