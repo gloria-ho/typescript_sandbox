@@ -41,7 +41,7 @@ interface BrainEater {
 }
 
 enum Weakness { // enum is a comma separate list
-  Stake1 = 'is vulnerable to attacks from this pointd implement',
+  Stake1 = 'is vulnerable to attacks from this pointed implement',
   Fire1 = 'is quite flamable',
   Sunlight1 = 'is burned by the light of day',
 }
