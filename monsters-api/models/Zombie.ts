@@ -23,5 +23,5 @@ export default class Zombie implements Monster {
   //   } else {
   //   return `${this.name} has survived`;
   //   }
-  }
+  // }
 }
