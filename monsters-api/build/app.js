@@ -21,11 +21,15 @@ app.get('/roll-call', function (req, res) {
 app.get('/:name', function (req, res) {
     let name = req.params.name;
     if (name in myMonsters) {
-        res.send(name + ' is a valid Monster.');
+        res.send(name + ' is a valid Monster. Please submit an action.');
     }
-    else {
-        res.send(name + ' is not a valid Monster.');
-    }
+    res.send(name + ' is not a valid Monster. Please try another name.');
+});
+app.get('/:name/feed?foodSource=:food&units=:x', function (req, res) {
+    let name = req.params.name;
+    let food = req.params.food;
+    let units = req.params.x;
+    res.send(name + ', ' + food + ', ' + units);
 });
 app.listen('3000', function () {
     console.log('listening on 3000');
