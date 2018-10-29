@@ -1,10 +1,11 @@
 export enum Food {
-  Blood = 'feeds on blood.',
-  Brains = 'feeds on brains.',
+  Blood = 'feeds on some blood.',
+  Brains = 'feeds on some brains.',
+  Flesh = 'feeds on some flesh.',
 }
 
 export enum Attack {
-  Stake = 'with a sharp stake.',
+  Stake = 'with a deadly stake.',
   Fire = 'with blazing fire,',
   Sunlight = 'with blinding sunlight.',
   Punch = 'with a punch.',

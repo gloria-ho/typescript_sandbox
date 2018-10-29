@@ -20,7 +20,12 @@ app.get('/roll-call', function (req, res) {
 });
 app.get('/:name', function (req, res) {
     let name = req.params.name;
-    res.send(name);
+    if (name in myMonsters) {
+        res.send(name + ' is a valid Monster.');
+    }
+    else {
+        res.send(name + ' is not a valid Monster.');
+    }
 });
 app.listen('3000', function () {
     console.log('listening on 3000');

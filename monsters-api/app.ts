@@ -1,6 +1,6 @@
 import * as express from 'express';
 
-// Models
+// models, interfaces, & enums
 import Monster from './interfaces/Monster';
 import Vampire from './models/Vampire';
 import Zombie from './models/Zombie';
@@ -15,7 +15,7 @@ const myMonsters = {
   'Joe': new Zombie('Joe'),
 }
 
-app.get('/', function(req, res) {
+app.get('/', function(req, res){
   res.send('Hello, this is a test that the server is running.');
 });
 
@@ -29,7 +29,11 @@ app.get('/roll-call', function(req, res){
 
 app.get('/:name', function(req, res){
   let name = req.params.name;
-  res.send(name);
+  if (name in myMonsters) {
+    res.send(name + ' is a valid Monster.');
+  } else {
+    res.send(name + ' is not a valid Monster.')
+  }
 });
 
 app.listen('3000', function(){

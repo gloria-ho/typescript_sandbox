@@ -1,12 +1,14 @@
 
 import Monster from '../interfaces/Monster'
+import {Food, Weakness} from '../interfaces/enums'
 
 export default class Vampire implements Monster {
   name: string;
   // hunger= 100;
   // pintsConsumed = 0;
-  // weaknesses = [Weakness.Fire1, Weakness.Stake1, Weakness.Sunlight1];
-
+  weaknesses = [Weakness.Fire, Weakness.Stake, Weakness.Sunlight];
+  foodSource = [Food.Blood];
+  
   constructor(name: string) {
     this.name = name;
   }

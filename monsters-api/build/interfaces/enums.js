@@ -2,12 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Food;
 (function (Food) {
-    Food["Blood"] = "feeds on blood.";
-    Food["Brains"] = "feeds on brains.";
+    Food["Blood"] = "feeds on some blood.";
+    Food["Brains"] = "feeds on some brains.";
+    Food["Flesh"] = "feeds on some flesh.";
 })(Food = exports.Food || (exports.Food = {}));
 var Attack;
 (function (Attack) {
-    Attack["Stake"] = "with a sharp stake.";
+    Attack["Stake"] = "with a deadly stake.";
     Attack["Fire"] = "with blazing fire,";
     Attack["Sunlight"] = "with blinding sunlight.";
     Attack["Punch"] = "with a punch.";
