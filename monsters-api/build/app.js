@@ -29,7 +29,14 @@ app.get('/:name/feed?foodSource=:food&units=:x', function (req, res) {
     let name = req.params.name;
     let food = req.params.food;
     let units = req.params.x;
-    res.send(name + ', ' + food + ', ' + units);
+    if (name in myMonsters) {
+        let monster = myMonsters[name];
+        res.send(monster.name + ' ' + monster.foodSource);
+        //
+        // FIX
+        // this prints ALL FOOD SORUCES.
+    }
+    res.send('Something went wrong. Please try again.');
 });
 app.listen('3000', function () {
     console.log('listening on 3000');
