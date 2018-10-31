@@ -7,6 +7,7 @@ import Zombie from './models/Zombie';
 import {Food} from './interfaces/enums';
 import {Attack} from './interfaces/enums';
 import {Weakness} from './interfaces/enums';
+import { read } from 'fs';
 
 const app = express();
 
@@ -41,10 +42,14 @@ app.get('/:name/feed?foodSource=:food&units=:x', function(req, res){
   let units = req.params.x;
   if (name in myMonsters){
     let monster = myMonsters[name];
-    res.send(monster.name + ' ' + monster.foodSource);
+    if (monster.foodSource.includes(food)){
+      res.send(monster.name + ' ' + food);
+    }
     //
     // FIX
-    // this prints ALL FOOD SORUCES.
+    // need to print just the selected food.
+    // res.send('Food is not coming up.');
+
   }
   res.send('Something went wrong. Please try again.');
 });
