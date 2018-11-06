@@ -49,7 +49,10 @@ app.get('/:name/feed?foodSource=:food&units=:x', function(req, res){
     // - figure out how to check food against the enum foodsource
     //
       res.send(monster.name + ' ' + monster);
-
+    //
+    // FIX
+    // this request should result in printing the monster name and the food string enum
+    //
     }
   }
   res.send('Something went wrong. Please try again.');
