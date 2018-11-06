@@ -38,18 +38,19 @@ app.get('/:name', function(req, res){
 
 app.get('/:name/feed?foodSource=:food&units=:x', function(req, res){
   let name = req.params.name;
-  let food = req.params.food;
+  let food = req.params.food as Food;
   let units = req.params.x;
   if (name in myMonsters){
     let monster = myMonsters[name];
     if (monster.foodSource.includes(food)){
-      res.send(monster.name + ' ' + food);
-    }
     //
     // FIX
-    // need to print just the selected food.
-    // res.send('Food is not coming up.');
+    // this if statement is not running correctly
+    // - figure out how to check food against the enum foodsource
+    //
+      res.send(monster.name + ' ' + monster);
 
+    }
   }
   res.send('Something went wrong. Please try again.');
 });
