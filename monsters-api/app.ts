@@ -42,7 +42,8 @@ app.get('/:name/feed?foodSource=:food&units=:x', function(req, res){
   let units = req.params.x;
   if (name in myMonsters){
     let monster = myMonsters[name];
-    if (monster.foodSource.includes(food)){
+    // if (monster.foodSource.includes(food)){
+    if (Object.keys(monster.foodSource).find(key => monster.foodSource[key] === food)) {
     //
     // FIX
     // this if statement is not running correctly
@@ -51,7 +52,7 @@ app.get('/:name/feed?foodSource=:food&units=:x', function(req, res){
       res.send(monster.name + ' ' + monster);
     //
     // FIX
-    // this request should result in printing the monster name and the food string enum
+    // this request should result in printing the monster name and the food string enumß
     //
     }
   }
